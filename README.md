@@ -1,16 +1,15 @@
-# blink
+# Blink
 
-A new Flutter project.
+Blink is a Flutter e-commerce demo application that showcases product listing, cart management, order summary, and local notifications.  
+It follows Clean Architecture with BLoC and AutoRoute for scalable and maintainable code.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+- Product listing with shimmer loading
+- Add and remove items from cart
+- Order placement
+- Local notifications for order updates
+- Clean Architecture with BLoC and GetIt
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Preview
+[![Watch Demo](https://drive.google.com/file/d/1g_8OjdoRcTjRSfc0D0a7O65kN_kVF9d7/view?usp=sharing)](https://drive.google.com/file/d/1es-ye_uLvY1EmFjRcDGcf4vIELvyW6or/view?usp=sharing)
