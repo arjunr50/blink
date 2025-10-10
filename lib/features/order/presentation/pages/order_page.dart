@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:blink/core/controller/common_controller.dart';
 import 'package:blink/features/product/domain/entities/response/product.dart';
+import 'package:blink/shared/widgets/no_data_widget.dart';
 import 'package:blink/shared/widgets/text_view.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
@@ -21,13 +22,7 @@ class OrderPage extends StatelessWidget {
           valueListenable: commonController.orders,
           builder: (context, orders, _) {
             if (orders.isEmpty) {
-              return const Center(
-                child: TextView(
-                  text: "No orders yet",
-                  fontSize: 18,
-                  color: Colors.grey,
-                ),
-              );
+              return const Center(child: NoDataWidget(text: "No orders yet"));
             }
 
             final allItems = orders.expand((o) => o.items ?? []).toList();
@@ -54,10 +49,10 @@ class OrderPage extends StatelessWidget {
               final percent = (entry.value / total) * 100;
               return PieChartSectionData(
                 color:
-                Colors.primaries[productCount.keys.toList().indexOf(
-                  entry.key,
-                ) %
-                    Colors.primaries.length],
+                    Colors.primaries[productCount.keys.toList().indexOf(
+                          entry.key,
+                        ) %
+                        Colors.primaries.length],
                 value: entry.value.toDouble(),
                 title: "${percent.toStringAsFixed(1)}%",
                 radius: 60,
@@ -75,10 +70,11 @@ class OrderPage extends StatelessWidget {
                 barRods: [
                   BarChartRodData(
                     toY: entry.value.toDouble(),
-                    color: Colors.primaries[productCount.keys.toList().indexOf(
-                      entry.key,
-                    ) %
-                        Colors.primaries.length],
+                    color:
+                        Colors.primaries[productCount.keys.toList().indexOf(
+                              entry.key,
+                            ) %
+                            Colors.primaries.length],
                     width: 20,
                   ),
                 ],
@@ -126,7 +122,8 @@ class OrderPage extends StatelessWidget {
                               getTitlesWidget: (value, meta) {
                                 final index = value.toInt();
                                 if (index < productCount.keys.length) {
-                                  final productName = productCount.keys.elementAt(index);
+                                  final productName = productCount.keys
+                                      .elementAt(index);
                                   return Padding(
                                     padding: const EdgeInsets.only(top: 8.0),
                                     child: Text(
@@ -167,10 +164,10 @@ class OrderPage extends StatelessWidget {
                     runSpacing: 4,
                     children: productCount.entries.map((entry) {
                       final color =
-                      Colors.primaries[productCount.keys.toList().indexOf(
-                        entry.key,
-                      ) %
-                          Colors.primaries.length];
+                          Colors.primaries[productCount.keys.toList().indexOf(
+                                entry.key,
+                              ) %
+                              Colors.primaries.length];
                       return Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
@@ -183,7 +180,9 @@ class OrderPage extends StatelessWidget {
                               shape: BoxShape.circle,
                             ),
                           ),
-                          Expanded(child: TextView(text: entry.key, fontSize: 12)),
+                          Expanded(
+                            child: TextView(text: entry.key, fontSize: 12),
+                          ),
                         ],
                       );
                     }).toList(),
@@ -199,11 +198,11 @@ class OrderPage extends StatelessWidget {
                       final totalPrice =
                           order.items?.fold<double>(
                             0.0,
-                                (double sum, Product item) =>
-                            sum +
+                            (double sum, Product item) =>
+                                sum +
                                 ((item.price ?? 0) * (item.orderQuantity ?? 0)),
                           ) ??
-                              0.0;
+                          0.0;
 
                       return Card(
                         margin: const EdgeInsets.symmetric(

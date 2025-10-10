@@ -107,7 +107,7 @@ class NotificationService {
     await _notifications.show(
       orderId,
       'Order Confirmed!',
-      'Your order #$orderId for \$${totalAmount.toStringAsFixed(2)} has been placed successfully.',
+      'Your order #$orderId for ${totalAmount.toStringAsFixed(2)} has been placed successfully.',
       details,
     );
   }

@@ -9,7 +9,7 @@
         android:enableOnBackInvokedCallback="true"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon"
-        android:allowBackup="true"
+        android:allowBackup="false"
         android:fullBackupContent="false">
         <activity
             android:name=".MainActivity"
