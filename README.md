@@ -1,8 +1,8 @@
-##Blink
+## Blink
 Blink is a Flutter e-commerce demo application that showcases product listing, cart management, order summary, and local notifications.
 It follows Clean Architecture with BLoC and AutoRoute for scalable and maintainable code.
 
-##Features
+## Features
 Product listing with shimmer loading
 
 - Add and remove items from cart
