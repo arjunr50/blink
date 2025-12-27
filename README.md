@@ -15,7 +15,9 @@ Product listing with shimmer loading
 
 ## Preview & Demo Video
 
-[![Watch Demo](https://drive.google.com/uc?export=view&id=1g_8OjdoRcTjRSfc0D0a7O65kN_kVF9d7)](https://drive.google.com/file/d/1IrP8_3W0c977kl_CBH7OS5iRASlzp0vg/view?usp=sharing)
+<a href="https://drive.google.com/file/d/1IrP8_3W0c977kl_CBH7OS5iRASlzp0vg/view?usp=sharing" target="_blank">
+  <img src="https://drive.google.com/uc?export=view&id=1g_8OjdoRcTjRSfc0D0a7O65kN_kVF9d7" width="400" alt="Watch Demo" />
+</a>
 
 ---
 
